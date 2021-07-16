@@ -82,7 +82,7 @@ function hslControls(e){
      const hue = sliders[0];
      const brightness = sliders[1];
      const saturation = sliders[2];
-
+//this is bg
      const bgColor = initialcolors[index];
      
      let color = chroma(bgColor)
