@@ -18,7 +18,7 @@ path, i , svg{
 .colors{
     min-height: 80vh;
     display: flex;
-    color: rgb(248, 177, 177);
+    color: rgba(0, 0, 0, 0.527);
 }
 .color{
     min-height: 80vh;
@@ -41,17 +41,18 @@ path, i , svg{
     position: absolute;
     bottom: 0%;
     padding: 1rem;
-    background-color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    opacity: 0;
     width: 80%;
     border-top-left-radius:1rem ;
     border-top-right-radius:1rem ;
-    /* pointer-events: none; */
+    pointer-events: none;
+    transform: translateY(100px);
     transition: all 0.5s ease-in-out;
-    /* transform: translateY(100px); */
-    /* opacity: 0; */
+   
 }
 
-.slider.active{
+.active{
     opacity: 1;
     transform: translateY(0px);
     pointer-events: all;
@@ -60,7 +61,7 @@ path, i , svg{
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0.3rem;
+    padding: 0.5rem;
     border-bottom-left-radius:1rem ;
     border-top-right-radius:1rem ;
     border: none;
@@ -72,7 +73,6 @@ path, i , svg{
 .controls{
     display: flex;
     flex-direction: column;
-
 }
 .panel{
     display: flex;
@@ -81,13 +81,14 @@ path, i , svg{
     height: 20vh;
 }
 .panel button{
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 1rem;
     padding: 0.5rem 1rem;
     border: none;
     background-color: rgb(58, 58, 58);
     cursor: pointer;
     color: white;
+    border-radius: 1rem;
 }
 .panel p{
     font-size:1.2rem ;
@@ -113,4 +114,45 @@ input[type="range"]{
     position: relative;
     border-radius: 1rem;
     cursor: pointer;
+}
+
+.copy-container{
+    position: fixed;
+    top : 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+.copy-popup{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    transition: transform 0.5s ease;
+    transform: translateY(-2rem);
+    min-width: 30%;
+    min-height: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy-popup h4{
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.copy-container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.copy-popup.active{
+    transform: translateY(0rem);
 }
